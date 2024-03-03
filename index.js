@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const frontend_key = process.env.FRONTEND_KEY;
 
-app.use(cors());
+app.use(cors({ origin: frontend_key }));
 app.use(express.json());
 require("dotenv").config();
 const mongoDbKey = process.env.MONGODB_KEY;
