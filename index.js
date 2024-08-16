@@ -89,6 +89,7 @@ app.post("/profile", upload.single("image"), async (req, res) => {
   const name = req.body.name;
   const about = req.body.about;
   const imagePath = req.file.path;
+  console.log(imagePath)
   const imageSecureUrl = await cloudinary.uploader.upload(imagePath);
 
   const personalDataCheck = await personalModel.find();
